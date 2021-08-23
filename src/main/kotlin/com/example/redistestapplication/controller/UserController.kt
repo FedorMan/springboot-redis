@@ -13,8 +13,8 @@ class UserController(
 ) {
 
     @GetMapping("/all")
-    fun gelAll(): String {
-        return "all"
+    fun gelAll(): MutableIterable<User> {
+        return userRepository.findAll()
     }
 
     @GetMapping("/create")
